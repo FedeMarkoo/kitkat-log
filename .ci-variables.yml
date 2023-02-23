@@ -1,0 +1,25 @@
+#### USO DE .CI-VARIABLES Y TEMPLATES ####
+# Para que el uso de los templates funcione correctamente, es requerido que las variables definidas en este archivo cotnengan un valor.
+# No se podrán modificar el nombre de las variables.
+# Solo se puede modificar el valor de la derecha, en caso de no modificar se tomara el valor que esta por defecto en este archivo.
+
+variables:
+  #### Versión de Java a utilizar. Puede ser 8 u 11. ####
+  JAVA_VERSION: "8"
+  SUBIR_POM: "true"
+
+  #### Variables: MVN test ####
+  # Para realizar el test utilizando templates deben existir las 4 carpetas de test aunque esten vacías sino tendrá comportamiento errático.
+  # Las 4 carpetas son: unit, integration, functional y smoke, también es necesario que tengan estos nombres.
+  # En este caso solo se puede editar: 'true' o 'false'.
+  # False: para evitar el test, así en caso de que no encuentre ningún test, el pipeline correra normalmente dejando una advertencia.
+  # True: el pipeline espera encontrar la carpeta con el test a correr, si no encuentra su carpeta el pipeline se detiene indicando error.
+  PARALLEL_TESTS: "true"
+  UNIT_TESTS_ARE_MANDATORY: "true"
+  FUNCTIONAL_TESTS_ARE_MANDATORY: "false"
+  INTEGRATION_TESTS_ARE_MANDATORY: "false"
+  SMOKE_TESTS_ARE_MANDATORY: "false"
+
+  #### QUALITY SONAR ####
+  SONAR_EXCLUSIONS_FILES: "**/model/**,**/swagger/**,**/configuration/**"
+  SONAR_TEST_PATH_JUNIT: ""

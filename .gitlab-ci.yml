@@ -1,0 +1,7 @@
+include:
+  # Maven pipeline
+  - project: 'santander-tecnologia/global-ci-templates'
+    file: 'nexus-deploy/.gitlab-ci.yml'
+    ref: 'master'
+  # User variables 
+  - local: '.ci-variables.yml'

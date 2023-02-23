@@ -1,0 +1,13 @@
+{
+  "artifacts" : [
+    {
+      "DgroupId": "ar.santandertecnologia.transferencias",
+      "DartifactId" : "kitkat-log",
+      "Dversion" : "1.1.1",
+      "Dpackaging": "jar",
+      "DrepositoryId": "maven-releases",
+      "Dfile": "target/kitkat-log-1.1.1.jar",
+      "DpomFile": "./pom.xml"
+    }
+  ]
+}
